@@ -46,24 +46,103 @@
 
                 </div>
 
+                <div class="col-lg-6 col-md-6">
+
+                    <!-- Name -->
+                    <div>
+                        <x-input-label for="reg_no" :value="__('Register No')" />
+                        <x-text-input id="reg_no" class="block mt-1 w-full" type="text" name="reg_no" :value="old('reg_no')" required autofocus autocomplete="reg_no" />
+                        <x-input-error :messages="$errors->get('reg_no')" class="mt-2" />
+                    </div>
+
+
+                    <div class="mt-4">
+
+                        <x-input-label for="Department" :value="__('Department')" />
+
+                        <select>
+                            <option value="CS">CS</options>
+                            <option value="ENGLISH">ENGLISH</options>
+                            <option value="PHYSICS">PHYSICS</options>
+                        </select>
+                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                    </div>
+
+                    <div class="mt-4">
+
+                        <label for="First">Class</label>
+                        <select>
+                            <option value="A"> A </options>
+                            <option value="B"> B </options>
+                            <option value="C"> C </options>
+                            <option value="D"> D </options>
+                            <option value="E"> E </options>
+                            <option value="F"> F </options>
+                        </select>
+                        <select>
+                            <option value="A"> A </options>
+                            <option value="B"> B </options>
+                            <option value="C"> C </options>
+                            <option value="D"> D </options>
+                            <option value="E"> E </options>
+                            <option value="F"> F </options>
+                        </select>
+                    </div>
+                    <div class="mt-4">
+
+                        <label for="Department">Degree</label>
+                        <select name="CS" id="CS">
+                            <option value="AI">UG</options>
+                            <option value="AI">PG</options>
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <label for="First">Batch</label>
+                        <select>
+                            <option value="2021-2024">2021-2024</options>
+                            <option value="2019-2022">2019-2022</options>
+                            <option value="2020-2023">2020-2023</options>
+                            <option value="2023-2026">2023-2026</options>
+                        </select>
+
+                    </div>
+                    <div class="mt-4">
+
+
+                        <label for="sex">Gender</label>
+                        <select>
+                            <option value="male" id="male"> </option>
+                            <option value="male">Male </option>
+                            <option value="Female"> Female</option>
+                            <option value="Other Gender"> Other</option>
+                        </select>
+
+                    </div>
+                    <div class="mt-4">
+
+                        <label for="DOB">Date of Birth:</label>
+                        <input type="Date" id="Date" name="Start'value='1990-01-01" min="1990-01-01" max="2020-01-01">
+
+                    </div>
+
+                </div>
             </div>
-    </div>
-    <div class="row">
+            <div class="row">
 
-        <div class="col-lg-12 col-md-12">
-            <div class="flex items-center justify-center mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+                <div class="col-lg-12 col-md-12">
+                    <div class="flex items-center justify-center mt-4">
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                            {{ __('Already registered?') }}
+                        </a>
 
-                <x-primary-button class="ml-4">
-                    {{ __('Register') }}
-                </x-primary-button>
+                        <x-primary-button class="ml-4">
+                            {{ __('Register') }}
+                        </x-primary-button>
+                    </div>
+
+                </div>
             </div>
-
-        </div>
-    </div>
-    </form>
+        </form>
     </div>
 
 </x-guest-layout>
