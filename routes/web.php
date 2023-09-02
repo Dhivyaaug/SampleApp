@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,16 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+
+// admin routes
+
+
+Route::get('/admin/add/student',[StudentController::class,'index'])->name('student.create');
+Route::any('admin/student/store',[StudentController::class,'store'])->name('student.store');
+Route::any('admin/student',[StudentController::class,'list'])->name('student.list');
+Route::any('admin/student/edit/{id}',[StudentController::class,'edit'])->name('student.edit');
+Route::any('admin/student/update/{id}',[StudentController::class,'update'])->name('student.update');
+Route::any('admin/student/delete/{id}',[StudentController::class,'destroy'])->name('student.delete');
+Route::any('admin/student/block/{id}',[StudentController::class,'block'])->name('student.block');
+
