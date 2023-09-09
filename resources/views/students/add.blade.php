@@ -66,10 +66,10 @@
             <div class="form-group">
                 <label for="department">Department:</label>
                 <select class="form-control" id="department" name="department" required>
-                <option value="cs">Computer science</option>
-                <option value="math">Maths</option>
-                <option value="che">Chemistry</option>
-                <option value="phy">Physics</option>
+                <option value="1">Computer science</option>
+                <option value="2">Maths</option>
+                <option value="3">Chemistry</option>
+                <option value="4">Physics</option>
                 </select>
             </div>
 
@@ -86,10 +86,9 @@
             <div class="form-group">
                 <label for="batch">Batch:</label>
                 <select class="form-control" id="batch" name="batch" required>
-                <option value="2021-2024">2021-2024</option>
-                <option value="2019-2022">2019-2022</option>
-                <option value="2020-2023">2020-2023</option>
-                <option value="2023-2026">2023-2026</option>
+                <option value="2021-2023">2021-2023</option>
+                <option value="2022-2024">2022-2024</option>
+                <option value="2023-2025">2023-2025</option>
             </select>
             </div>
 
