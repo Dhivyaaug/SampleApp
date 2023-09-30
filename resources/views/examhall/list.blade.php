@@ -35,7 +35,7 @@
                     <td>{{ $hall->hall_no }}</td>
                     <td>{{ $hall->block_capacity }}</td>
                     <td>
-                        <a href="{{ route('student.edit', $hall->block_id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('examhall.edit', $hall->block_id) }}" class="btn btn-primary">Edit</a>
                         <a data-id='{{  $hall->block_id }}'  class="btn btn-danger deleteuser">Delete</a>
                     </td>
                 </tr>

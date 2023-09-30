@@ -94,7 +94,9 @@ class ExamController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // dd($id);
+        $hall =  Blocks::find($id);
+        return view('examhall.edit')->with('hall',$hall);
     }
 
     /**
@@ -102,7 +104,21 @@ class ExamController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $block = new Blocks();
+        $update_arr = [
+            'block_name'     => $request->block_name,
+            'hall_no'        => $request->hall_no,
+            'block_capacity' => $request->seat_capacity
+        ];
+
+        $update =$block->where('block_id',$id)->update($update_arr);
+
+        if($update)
+        {
+            $halls = Blocks::paginate(10);
+            session()->flash('success', 'Examshall Updated successfully!!!');
+            return redirect()->route('examhall.list')->with('halls',$halls);
+        }
     }
 
     public function list()

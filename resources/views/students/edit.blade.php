@@ -1,8 +1,6 @@
 {{-- @extends('layouts.app') Use your layout if you have one --}}
-
-@include('layouts.studentlink')
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.exam')
+@section('content')
 <body>
      @include('layouts.alert')
     <div class="container">
@@ -57,10 +55,10 @@
         <div class="form-group">
             <label for="department">Department:</label>
             <select class="form-control" id="department" value={{ $student['department'] }} name="department" required>
-            <option value="cs">Computer science</option>
-            <option value="math">Maths</option>
-            <option value="che">Chemistry</option>
-            <option value="phy">Physics</option>
+            <option value="1">Computer science</option>
+            <option value="2">Maths</option>
+            <option value="3">Chemistry</option>
+            <option value="4">Physics</option>
             </select>
         </div>
 
@@ -114,6 +112,9 @@
     {!! Form::close() !!}
 
     </div>
+</body>
+    @endsection
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         $(function(){
             var data = '<?php echo json_encode($student);?>'
@@ -137,7 +138,5 @@
             $('#date_of_birth').val(response.date_of_birth);
         })
     </script>
-</body>
-</html>
 
 

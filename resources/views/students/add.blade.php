@@ -1,16 +1,9 @@
- {{-- You can extend your master layout if you have one --}}
-@include('layouts.studentlink')
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+@extends('layouts.exam')
+@section('content')
 <body>
     @include('layouts.alert')
     <div class="container">
+        <h2>Add Student</h2>
         <form method="POST" action="{{ url('admin/student/store') }}" id="registration" files='true' enctype="multipart/form-data">
             @csrf {{-- Add the CSRF token --}}
 
@@ -119,8 +112,16 @@
         </form>
     </div>
 </body>
+@endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('#class').select2()
+        $('#department').select2()
+        $('#degree').select2()
+        $('#batch').select2()
+        $('#gender').select2()
+
         $("#registration").validate({
             rules: {
                 register_no: {
@@ -182,6 +183,5 @@
     });
 
 </script>
-</html>
 
 
