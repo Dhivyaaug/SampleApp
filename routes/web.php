@@ -49,7 +49,8 @@ Route::any('admin/student/block/{id}',[StudentController::class,'block'])->name(
 Route::get('admin/exams/new',[ExamController::class,'index'])->name('exam.register');
 Route::post('admin/exams/new', [ExamController::class,'store'])->name('exam.register.submit');
 Route::any('admin/exams', [ExamController::class,'list'])->name('exam.list');
-
+Route::any('admin/exams/update/{id}', [ExamController::class,'list'])->name('exam.update');
+Route::any('admin/exam/edit/{id}', [ExamController::class,'editexam'])->name('exam.edit');
 
 Route::get('admin/examhall/new',[ ExamController::class,'indexhall' ])->name('examhall.register');
 Route::get('admin/examshalls/edit/{id}',[ExamController::class,'edit'])->name('examhall.edit');

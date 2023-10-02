@@ -60,7 +60,8 @@ class StudentController extends Controller
         {
             $students = Student::paginate(10);
             session()->flash('success', 'Student Added Sucessfully!!!');
-            return redirect()->route('student.list')->with('students',$students);
+            // return redirect()->route('student.list')->with('students',$students);
+            return back();
         }
         else{
             session()->flash('error', 'Registration was successful.');
@@ -79,7 +80,7 @@ class StudentController extends Controller
 
     public function list()
     {
-        $students = Student::paginate(10);
+        $students = Student::paginate(120);
         return view('students.list')->with('students',$students);
     }
 

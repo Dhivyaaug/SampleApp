@@ -41,7 +41,7 @@
                     <td>{{ $exam->session }}</td>
                     <td>{{ $exam->year }}</td>
                     <td>
-                        <a href="{{ route('student.edit', $exam->exam_id) }}" class="btn btn-primary">Edit</a>
+                        <a href="{{ route('exam.edit', $exam->exam_id) }}" class="btn btn-primary">Edit</a>
                         <a data-id='{{  $exam->exam_id }}'  class="btn btn-danger deleteuser">Delete</a>
                     </td>
                 </tr>

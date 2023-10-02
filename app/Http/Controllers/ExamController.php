@@ -146,5 +146,13 @@ class ExamController extends Controller
     return view('examhall.list')->with('halls',$halls);
     }
 
+    public function editexam(string $id)
+    {
+        // dd($id);
+        $exam =  DB::table('departments')->select('*')->join('exams','exams.department_id','=','departments.department_id')->where('exams.exam_id',$id)->first();
+        // dd($exam);
+        return view('exam.edit')->with('exam',$exam);
+    }
+
 
 }
