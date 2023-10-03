@@ -28,7 +28,7 @@
 
 <body class="font-sans text-gray-900 antialiased">
 
-    <div class="w-full sm:max-w-md mt-4 px-12 py-8 bg-white shadow-md overflow-hidden sm:rounded-lg"> --}}
+    <div class="w-full lg:max-w-lg m-auto md:max-w-lg sm:max-w-md mt-4 px-12 py-8 bg-white shadow-md overflow-hidden sm:rounded-lg">
     {{ $slot }}
    </div>
 </body>
