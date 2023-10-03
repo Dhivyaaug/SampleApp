@@ -60,6 +60,7 @@ Route::any('admin/examhalls', [ ExamController::class,'hallList' ])->name('examh
 
 Route::any('admin/seating_arrangement', [ SeatingarrangementController::class,'index' ])->name('seating');
 Route::any('admin/seating_arrangement/generate', [ SeatingarrangementController::class,'create' ])->name('seating.create');
+Route::any('admin/seating_arrangement/list', [ SeatingarrangementController::class,'list' ])->name('seating.list');
 
 
 
